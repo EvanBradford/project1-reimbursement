@@ -51,4 +51,4 @@ TABLE EMPLOYEES
 EMPLOYEEID EmployeeType FirstNAME Lastname email password phoneNumber address StartDate Status
 
 TABLE REIMBURSEMENTS
-REQUESTID Ammount Purpose SubmittedDate Status (foreign key EMPLOYEEID)
+REQUESTID Amount Purpose SubmittedDate Status (foreign key EMPLOYEEID)

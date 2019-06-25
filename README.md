@@ -1,0 +1,1 @@
+This is a project from training to learn how to make servlets link up with a database. It allows employees to request reimbursement and the company to approve or deny those requests.

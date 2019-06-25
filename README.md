@@ -48,7 +48,7 @@ Register New emplyees and send them an email with login info
 DATABASE LAYOUT
 
 TABLE EMPLOYEES
-EMPLOYEEID EmployeeType FirstNAME Lastname email phoneNumber address StartDate Status
+EMPLOYEEID EmployeeType FirstNAME Lastname email password phoneNumber address StartDate Status
 
 TABLE REIMBURSEMENTS
 REQUESTID Ammount Purpose SubmittedDate Status (foreign key EMPLOYEEID)

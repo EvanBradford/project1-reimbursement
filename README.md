@@ -25,7 +25,7 @@ Upload Image as Evidence
 Recieve Email when resolved
 Reset Password (via email?)
 
-Class Manager
+Class Admin
 
 SERVLETS AND HTML
 

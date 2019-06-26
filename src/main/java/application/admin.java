@@ -1,6 +1,6 @@
 package application;
 
-public class admin extends users{
+public class admin extends users implements AdminActions{
 	private static final long serialVersionUID = -5312758439517622438L;
 
 	public admin() {

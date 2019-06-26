@@ -1,6 +1,6 @@
 package application;
 
-public class employees extends users{
+public class employees extends users implements EmpActions{
 
 	/**
 	 * 
@@ -142,6 +142,60 @@ public class employees extends users{
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
+	}
+
+	@Override
+	public void login() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void submitRequest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewRequests() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewInformation() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateInformation() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void uploadImage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sendEmail() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resetPassword() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

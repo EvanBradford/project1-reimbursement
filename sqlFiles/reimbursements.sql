@@ -71,3 +71,4 @@ BEGIN
    REQUESTID := re_seq.currval;
    COMMIT;
 END;
+

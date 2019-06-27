@@ -195,7 +195,6 @@ public class admin extends users implements AdminActions{
 	@Override
 	public void viewImages() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

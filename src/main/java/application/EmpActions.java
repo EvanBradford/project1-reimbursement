@@ -2,13 +2,13 @@ package application;
 
 public interface EmpActions {
 	//SERVLETS & HTML
-	void login();
+	void login(String email, String password);
 	//View their Homepage
 	void logout();
 
 	//NORMAL FUNCTIONS
 
-	void submitRequest();
+	void submitRequest(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID);
 	void viewRequests();
 
 	void viewInformation();

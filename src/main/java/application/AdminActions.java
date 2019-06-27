@@ -3,7 +3,7 @@ package application;
 public interface AdminActions {
 	//SERVLETS AND HTML
 
-	void login();
+	void login(String email, String password);
 	//View their Homepage
 	void logout();
 
@@ -17,6 +17,6 @@ public interface AdminActions {
 
 	//Optional:
 	void viewImages();
-	void registerEmployees();
+	void registerEmployees(int EMPLOYEEID, String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS);
 	// this will send them an email with login info
 }

@@ -145,7 +145,7 @@ public class employees extends users implements EmpActions{
 	}
 
 	@Override
-	public void login() {
+	public void login(String email, String password) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -157,7 +157,7 @@ public class employees extends users implements EmpActions{
 	}
 
 	@Override
-	public void submitRequest() {
+	public void submitRequest(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -197,6 +197,4 @@ public class employees extends users implements EmpActions{
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
 }

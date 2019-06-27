@@ -139,6 +139,60 @@ public class admin extends users implements AdminActions{
 		// TODO Auto-generated method stub
 		return super.toString();
 	}
+
+	@Override
+	public void login() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void approve() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deny() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewAllRequests() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewRequests(employees employee) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewAllEmployees() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void viewImages() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerEmployees() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

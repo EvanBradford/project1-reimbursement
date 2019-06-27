@@ -1,5 +1,7 @@
 package application;
 
+import dao.ReService;
+
 public class employees extends users implements EmpActions{
 
 	/**
@@ -140,14 +142,22 @@ public class employees extends users implements EmpActions{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "employees [employeeId=" + employeeId + ", employeeType=" + employeeType + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", email=" + email + ", password=" + password + ", address=" + address
+				+ ", startDate=" + startDate + ", status=" + status + "]";
 	}
 
 	@Override
-	public void login(String email, String password) {
+	public employees login(String email, String password) {
 		// TODO Auto-generated method stub
-		
+		employees tmp = new employees();
+		try {		
+			tmp = ReService.loginE(email, password);
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return null;
+		}
+		return tmp;
 	}
 
 	@Override
@@ -157,13 +167,20 @@ public class employees extends users implements EmpActions{
 	}
 
 	@Override
-	public void submitRequest(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) {
+	public void submitRequest(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) {
 		// TODO Auto-generated method stub
-		
+		try {		
+			ReService.insertRe(AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID);
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return;
+		}
+		System.out.println("Account Created");
+		return;
 	}
 
 	@Override
-	public void viewRequests() {
+	public void viewRequests(int empId) {
 		// TODO Auto-generated method stub
 		
 	}

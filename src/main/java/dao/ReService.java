@@ -20,7 +20,7 @@ public class ReService {
 	public static employees loginE(String userName, String password) throws Exception{
 		return dao.loginE(userName, password);
 	}
-	public static admin loginu(int acntNum, String userName, String password) throws Exception{
+	public static admin loginA(String userName, String password) throws Exception{
 		return dao.loginA(userName, password);
 	}
 	public static void insertEmp(String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) throws Exception
@@ -28,9 +28,9 @@ public class ReService {
 		dao.insertEmp(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 		return;
 	}
-	public static void insertRe(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception
+	public static void insertRe(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception
 	{
-		dao.insertRe(REQUESTID, AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID);
+		dao.insertRe(AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID);
 		return;
 	}
 }

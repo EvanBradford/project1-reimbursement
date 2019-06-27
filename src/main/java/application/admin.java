@@ -1,5 +1,7 @@
 package application;
 
+import dao.ReService;
+
 public class admin extends users implements AdminActions{
 	private static final long serialVersionUID = -5312758439517622438L;
 
@@ -136,14 +138,22 @@ public class admin extends users implements AdminActions{
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		return "admin [employeeId=" + employeeId + ", employeeType=" + employeeType + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", email=" + email + ", password=" + password + ", address=" + address
+				+ ", startDate=" + startDate + ", status=" + status + "]";
 	}
 
 	@Override
-	public void login(String email, String password) {
+	public admin login(String email, String password) {
 		// TODO Auto-generated method stub
-		
+		admin tmp = new admin();
+		try {		
+			tmp = ReService.loginA(email, password);
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return null;
+		}
+		return tmp;
 	}
 
 	@Override
@@ -189,8 +199,15 @@ public class admin extends users implements AdminActions{
 	}
 
 	@Override
-	public void registerEmployees(int EMPLOYEEID, String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) {
+	public void registerEmployees(String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) {
 		// TODO Auto-generated method stub
-		
+		try {		
+			ReService.insertEmp(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return;
+		}
+		System.out.println("Account Created");
+		return;
 	}
 }

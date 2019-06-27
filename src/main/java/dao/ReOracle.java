@@ -176,7 +176,7 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 	}
-	public void insertRe(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception {
+	public void insertRe(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception {
 		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();
 

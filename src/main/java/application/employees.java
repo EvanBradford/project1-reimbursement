@@ -169,7 +169,7 @@ public class employees extends users implements EmpActions{
 	@Override
 	public void submitRequest(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) {
 		// TODO Auto-generated method stub
-		try {		
+		try {
 			ReService.insertRe(AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID);
 		} catch (Exception e) {
 			System.out.println("Oops.. (^_^)");
@@ -178,7 +178,6 @@ public class employees extends users implements EmpActions{
 		System.out.println("Account Created");
 		return;
 	}
-
 	@Override
 	public void viewRequests(int empId) {
 		// TODO Auto-generated method stub

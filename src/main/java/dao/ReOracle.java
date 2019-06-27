@@ -16,13 +16,15 @@ import org.apache.logging.log4j.Logger;
 
 import application.admin;
 import application.employees;
+import application.reimbursements;
 import application.users;
 import util.ConnectionUtil;
 
+@SuppressWarnings("unused")
 public class ReOracle implements ReDao {
 	private static final Logger log = LogManager.getLogger(ReOracle.class);
 	private static final DecimalFormat df = new DecimalFormat();
-
+	
 	public List<users> getAll() throws Exception {
 		Connection con = ConnectionUtil.getConnection();
 
@@ -56,7 +58,7 @@ public class ReOracle implements ReDao {
 		}
 		return list;
 	}
-	public List<String> getAllRe() throws Exception
+	public List<reimbursements> getAllRe() throws Exception
 	{
 		Connection con = ConnectionUtil.getConnection();
 
@@ -65,17 +67,17 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 
-		List<String> list;
+		List<reimbursements> list;
 		
 		try {			
 			String sql = "select * from REIMBURSEMENTS";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
-			list = new LinkedList<String>();
+			list = new LinkedList<reimbursements>();
 			
 			while(rs.next()){
-				list.add(rs.getString("TRANS"));
+				list.add(new reimbursements(rs.getInt("REQUESTID"), rs.getDouble("AMOUNT"), rs.getString("PURPOSE"), rs.getString("SUBMITTEDDATE"), rs.getString("STATUS"), rs.getInt("EMPLOYEE_ID")));
 			}
 		}catch (SQLException e) {
 			log.error("Unable to execute sql query", e);
@@ -174,7 +176,6 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 	}
-	//REQUESTID, AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID
 	public void insertRe(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception {
 		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();
@@ -184,7 +185,6 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 		try {
-			//, , , , 
 			String sql = "call create_request(?, ?, ?, ?, ?, ?)";
 			CallableStatement ps = con.prepareCall(sql);
 			ps.registerOutParameter(1, Types.INTEGER);

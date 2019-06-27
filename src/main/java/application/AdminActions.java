@@ -18,5 +18,5 @@ public interface AdminActions {
 	//Optional:
 	void viewImages();
 	void registerEmployees(int EMPLOYEEID, String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS);
-	// this will send them an email with login info
+	// this will send them an email with login info eventually
 }

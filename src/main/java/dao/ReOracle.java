@@ -68,7 +68,7 @@ public class ReOracle implements ReDao {
 		List<String> list;
 		
 		try {			
-			String sql = "select TRANS from TRANSACTIONS";
+			String sql = "select * from REIMBURSEMENTS";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
@@ -144,7 +144,7 @@ public class ReOracle implements ReDao {
 		}
 		return tmp;
 	}
-	public void insert(String acntType, String firstName, String lastName, String userName, String password, double balance) throws Exception {
+	public void insertEmp(String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) throws Exception {
 		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();
 
@@ -153,21 +153,52 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 		try {
-			String sql = "call create_account(?, ?, ?, ?, ?, ?, ?)";
+			String sql = "call create_employee(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			CallableStatement ps = con.prepareCall(sql);
 			ps.registerOutParameter(1, Types.INTEGER);
-			ps.setString(2, acntType);
-			ps.setString(3, firstName);
-			ps.setString(4, lastName);
-			ps.setString(5, userName);
-			ps.setString(6, password);
-			ps.setDouble(7, balance);
+			ps.setString(2, EMPLOYEETYPE);
+			ps.setString(3, FIRSTNAME);
+			ps.setString(4, LASTNAME);
+			ps.setString(5, EMAIL);
+			ps.setString(6, PASSWORD);
+			ps.setString(7, ADDRESS);
+			ps.setString(8, STARTDATE);
+			ps.setString(9, STATUS);
 			ps.executeUpdate();
 			int id = ps.getInt(1);
 			System.out.println("Successfully Added to database: ");
-			System.out.print("Your account number is: ");
+			System.out.print("New Employee Account number is: ");
 			System.out.println(id);
-		} catch (SQLException e) {
+		} catch (SQLException e){
+			log.error("Unable to execute sql query", e);
+			throw new Exception("Unable to connect to database");
+		}
+	}
+	//REQUESTID, AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID
+	public void insertRe(int REQUESTID, double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception {
+		// TODO Insert
+		Connection con = ConnectionUtil.getConnection();
+
+		if (con == null) {
+			log.error("Connection was null");
+			throw new Exception("Unable to connect to database");
+		}
+		try {
+			//, , , , 
+			String sql = "call create_request(?, ?, ?, ?, ?, ?)";
+			CallableStatement ps = con.prepareCall(sql);
+			ps.registerOutParameter(1, Types.INTEGER);
+			ps.setDouble(2, AMOUNT);
+			ps.setString(3, PURPOSE);
+			ps.setString(4, SUBMITTEDDATE);
+			ps.setString(5, STATUS);
+			ps.setInt(6, EMPLOYEE_ID);
+			ps.executeUpdate();
+			int id = ps.getInt(1);
+			System.out.println("Successfully Added to database: ");
+			System.out.print("Your request number is: ");
+			System.out.println(id);
+		} catch (SQLException e){
 			log.error("Unable to execute sql query", e);
 			throw new Exception("Unable to connect to database");
 		}

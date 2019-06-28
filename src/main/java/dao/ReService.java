@@ -13,6 +13,10 @@ public class ReService {
 	public static List<users> getAllAccounts() throws Exception {
 		return dao.getAll();
 	}
+	public static employees getInfo(int empID) throws Exception{
+		return dao.getInfo(empID);
+	}
+	
 	public static List<reimbursements> getAllRe() throws Exception
 	{
 		return dao.getAllRe();

@@ -150,12 +150,16 @@ public class admin extends users implements AdminActions{
 	
 	
 	@Override
-	public admin login(String email, String password) {
+	public admin login(String email, String password)
+	{
 		// TODO Auto-generated method stub
 		admin tmp = new admin();
-		try {		
+		try
+		{		
 			tmp = ReService.loginA(email, password);
-		} catch (Exception e) {
+		}
+		catch (Exception e)
+		{
 			System.out.println("Oops.. (^_^)");
 			return null;
 		}
@@ -191,6 +195,7 @@ public class admin extends users implements AdminActions{
 			return;
 		}
 		System.out.println(list);
+		return;
 	}
 
 	@Override
@@ -204,19 +209,21 @@ public class admin extends users implements AdminActions{
 			return;
 		}
 		System.out.println(list);
+		return;
 	}
 
 	@Override
 	public void viewAllEmployees() {
 		// TODO Auto-generated method stub
 		List<users> list;
-		try {		
+		try {
 			list = ReService.getAllAccounts();
 		} catch (Exception e) {
 			System.out.println("Oops.. (^_^)");
 			return;
 		}
 		System.out.println(list);
+		return;
 	}
 	
 	//OPTIONAL

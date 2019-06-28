@@ -1,5 +1,7 @@
 package application;
 
+import java.util.List;
+
 import dao.ReService;
 
 public class employees extends users implements EmpActions{
@@ -189,26 +191,28 @@ public class employees extends users implements EmpActions{
 	@Override
 	public void viewRequests(int empId) {
 		// TODO Auto-generated method stub
-		try {
-			;
+		List<reimbursements> list;
+		try {		
+			list = ReService.getRe(empId);
 		} catch (Exception e) {
 			System.out.println("Oops.. (^_^)");
 			return;
 		}
-		System.out.println("Account Created");
+		System.out.println(list);
 		return;
 	}
 
 	@Override
 	public void viewInformation(int empID) {
 		// TODO Auto-generated method stub
+		employees tmp = new employees();
 		try {
-			;
+			tmp = ReService.getInfo(empID);
 		} catch (Exception e) {
 			System.out.println("Oops.. (^_^)");
 			return;
 		}
-		System.out.println("Account Created");
+		System.out.println(tmp);
 		return;
 	}
 

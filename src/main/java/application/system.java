@@ -12,15 +12,19 @@ public class system {
 //		String EMPLOYEETYPE = "EMPLOYEE";
 //		String FIRSTNAME = "Hank";
 //		String LASTNAME = "Hill";
-//		String EMAIL = "propane@email.com";
-//		String PASSWORD = "12345";
+		String EMAIL = "propane@email.com";
+		String PASSWORD = "12345";
 //		String ADDRESS = "1234 Strickland";
 //		String STARTDATE = "2/24/1995";
 //		String STATUS = "RETIRED";
 //		ad.registerEmployees(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 //		
-//		employees emp = new employees();
-//		emp = emp.login(EMAIL, PASSWORD);
+		employees emp = new employees();
+		emp = emp.login(EMAIL, PASSWORD);
+		
+		emp.viewInformation(emp.getEmployeeId());
+		emp.viewRequests(emp.getEmployeeId());
+		
 //		System.out.println(emp);
 //		double AMOUNT = 9999.99;
 //		String PURPOSE = "Y2K";

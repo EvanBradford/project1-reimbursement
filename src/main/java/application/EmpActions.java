@@ -12,7 +12,7 @@ public interface EmpActions {
 	void viewRequests(int empId);
 
 	void viewInformation(int empID);
-	void updateInformation(String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS);
+	void updateInformation(int empID, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS);
 
 	//Optional:
 	void uploadImage();

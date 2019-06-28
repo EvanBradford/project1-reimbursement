@@ -229,6 +229,32 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 	}
+	public void updateEmp(int empID, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) throws Exception {
+		// TODO Insert
+		Connection con = ConnectionUtil.getConnection();
+
+		if (con == null) {
+			log.error("Connection was null");
+			throw new Exception("Unable to connect to database");
+		}
+		try {
+			String sql = "UPDATE ALLEMPLOYEES SET FIRSTNAME = ?, LASTNAME = ?, EMAIL = ?, PASSWORD = ?, ADDRESS = ?, STARTDATE = ?, STATUS = ? WHERE EMPLOYEEID = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, FIRSTNAME);
+			ps.setString(2, LASTNAME);
+			ps.setString(3, EMAIL);
+			ps.setString(4, PASSWORD);
+			ps.setString(5, ADDRESS);
+			ps.setString(6, STARTDATE);
+			ps.setString(7, STATUS);
+			ps.setInt(8, empID);
+			ps.executeUpdate();
+			System.out.println("Successfully Updated");
+		} catch (SQLException e){
+			log.error("Unable to execute sql query", e);
+			throw new Exception("Unable to connect to database");
+		}
+	}
 	public void insertRe(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception {
 		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();

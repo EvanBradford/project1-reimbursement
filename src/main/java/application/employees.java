@@ -217,10 +217,10 @@ public class employees extends users implements EmpActions{
 	}
 
 	@Override
-	public void updateInformation(String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) {
-		// TODO Auto-generated method stub
+	public void updateInformation(int empID, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) {
+	// TODO Auto-generated method stub
 		try {		
-			;
+			ReService.updateEmp(empID, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 		} catch (Exception e) {
 			System.out.println("Oops.. (^_^)");
 			return;

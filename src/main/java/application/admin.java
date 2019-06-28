@@ -196,14 +196,14 @@ public class admin extends users implements AdminActions{
 	@Override
 	public void viewRequests(int empID) {
 		// TODO Auto-generated method stub
-		reimbursements tmp = new reimbursements();
+		List<reimbursements> list;
 		try {		
-			tmp = ReService.getRe(empID);
+			list = ReService.getRe(empID);
 		} catch (Exception e) {
-			System.out.println("Opps.. (^_^)");
+			System.out.println("Oops.. (^_^)");
 			return;
 		}
-		System.out.println(tmp);
+		System.out.println(list);
 	}
 
 	@Override
@@ -213,7 +213,7 @@ public class admin extends users implements AdminActions{
 		try {		
 			list = ReService.getAllAccounts();
 		} catch (Exception e) {
-			System.out.println("Opps.. (^_^)");
+			System.out.println("Oops.. (^_^)");
 			return;
 		}
 		System.out.println(list);

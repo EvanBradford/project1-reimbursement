@@ -47,7 +47,7 @@ public class ReOracle implements ReDao {
 				{
 					list.add(new admin(rs.getInt("EMPLOYEEID"), rs.getString("EMPLOYEETYPE"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("EMAIL"), rs.getString("PASSWORD"),  rs.getString("ADDRESS"), rs.getString("STARTDATE"), rs.getString("STATUS")));
 				}
-				else if(rs.getString("acntType").equals("EMPLOYEE"))
+				else if(rs.getString("EMPLOYEETYPE").equals("EMPLOYEE"))
 				{
 					list.add(new employees(rs.getInt("EMPLOYEEID"), rs.getString("EMPLOYEETYPE"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("EMAIL"), rs.getString("PASSWORD"),  rs.getString("ADDRESS"), rs.getString("STARTDATE"), rs.getString("STATUS")));
 				}
@@ -85,7 +85,7 @@ public class ReOracle implements ReDao {
 		}
 		return list;
 	}
-	public reimbursements getRe(int empID) throws Exception
+	public List<reimbursements> getRe(int empID) throws Exception
 	{
 		Connection con = ConnectionUtil.getConnection();
 
@@ -105,13 +105,13 @@ public class ReOracle implements ReDao {
 			list = new LinkedList<reimbursements>();
 			
 			while(rs.next()){
-				return new reimbursements(rs.getInt("REQUESTID"), rs.getDouble("AMOUNT"), rs.getString("PURPOSE"), rs.getString("SUBMITTEDDATE"), rs.getString("STATUS"), rs.getInt("EMPLOYEE_ID"));
+				list.add(new reimbursements(rs.getInt("REQUESTID"), rs.getDouble("AMOUNT"), rs.getString("PURPOSE"), rs.getString("SUBMITTEDDATE"), rs.getString("STATUS"), rs.getInt("EMPLOYEE_ID")));
 			}
 		}catch (SQLException e) {
 			log.error("Unable to execute sql query", e);
 			throw new Exception("Unable to connect to database");
 		}
-		return null;
+		return list;
 	}
 	public employees loginE(String userName, String password) throws Exception{
 		employees tmp = new employees();
@@ -123,15 +123,15 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 		try {
-			String sql = "select * from BANKACCOUNTS";
+			String sql = "select * from ALLEMPLOYEES";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next())
 			{
-				if(rs.getString("Username").equals(userName) && rs.getString("password").equals(password))
+				if(rs.getString("EMAIL").equals(userName) && rs.getString("PASSWORD").equals(password))
 				{
-					if(rs.getString("acntType").equals("EMPLOYEE"))
+					if(rs.getString("EMPLOYEETYPE").equals("EMPLOYEE"))
 					{
 						tmp = new employees(rs.getInt("EMPLOYEEID"), rs.getString("EMPLOYEETYPE"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("EMAIL"), rs.getString("PASSWORD"),  rs.getString("ADDRESS"), rs.getString("STARTDATE"), rs.getString("STATUS"));
 					}
@@ -154,7 +154,7 @@ public class ReOracle implements ReDao {
 			throw new Exception("Unable to connect to database");
 		}
 		try {
-			String sql = "select * from BANKACCOUNTS";
+			String sql = "select * from ALLEMPLOYEES";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
@@ -162,7 +162,7 @@ public class ReOracle implements ReDao {
 			{
 				if(rs.getString("EMAIL").equals(userName) && rs.getString("PASSWORD").equals(password))
 				{
-					if(rs.getString("acntType").equals("ADMIN"))
+					if(rs.getString("EMPLOYEETYPE").equals("ADMIN"))
 					{
 						tmp = new admin(rs.getInt("EMPLOYEEID"), rs.getString("EMPLOYEETYPE"), rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), rs.getString("EMAIL"), rs.getString("PASSWORD"),  rs.getString("ADDRESS"), rs.getString("STARTDATE"), rs.getString("STATUS"));
 					}

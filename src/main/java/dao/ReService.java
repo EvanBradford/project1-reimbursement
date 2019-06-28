@@ -18,7 +18,7 @@ public class ReService {
 		return dao.getAllRe();
 	}
 	
-	public static reimbursements getRe(int empID) throws Exception
+	public static List<reimbursements> getRe(int empID) throws Exception
 	{
 		return dao.getRe(empID);
 	}

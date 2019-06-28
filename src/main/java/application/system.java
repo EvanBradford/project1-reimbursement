@@ -6,25 +6,28 @@ public class system {
 		System.out.println("WIP, this is for testing only");
 		
 //		admin ad = new admin();
+//		ad.viewAllEmployees();
+//		ad.viewAllRequests();
+//		ad.viewRequests(21);
 //		String EMPLOYEETYPE = "EMPLOYEE";
-//		String FIRSTNAME = "Frank";
-//		String LASTNAME = "Horrigan";
-//		String EMAIL = "fh1234@email.com";
+//		String FIRSTNAME = "Hank";
+//		String LASTNAME = "Hill";
+//		String EMAIL = "propane@email.com";
 //		String PASSWORD = "12345";
-//		String ADDRESS = "1234 Place Street";
-//		String STARTDATE = "2/24/2015";
-//		String STATUS = "ACTIVE";
+//		String ADDRESS = "1234 Strickland";
+//		String STARTDATE = "2/24/1995";
+//		String STATUS = "RETIRED";
 //		ad.registerEmployees(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 //		
 //		employees emp = new employees();
 //		emp = emp.login(EMAIL, PASSWORD);
-//		
-//		double AMOUNT = 555.55;
-//		String PURPOSE = "Testing";
-//		String SUBMITTEDDATE = "6/27/2019";
-//		STATUS = "SUBMITTED";
-//		int EMPLOYEE_ID = 21;
-//		
+//		System.out.println(emp);
+//		double AMOUNT = 9999.99;
+//		String PURPOSE = "Y2K";
+//		String SUBMITTEDDATE = "11/27/1999";
+//		String STATUS = "SUBMITTED";
+//		int EMPLOYEE_ID = emp.getEmployeeId();
+//	
 //		emp.submitRequest(AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID);
 	}
 }

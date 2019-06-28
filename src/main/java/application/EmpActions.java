@@ -11,8 +11,8 @@ public interface EmpActions {
 	void submitRequest(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID);
 	void viewRequests(int empId);
 
-	void viewInformation();
-	void updateInformation();
+	void viewInformation(int empID);
+	void updateInformation(String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS);
 
 	//Optional:
 	void uploadImage();

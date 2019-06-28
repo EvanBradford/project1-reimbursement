@@ -146,6 +146,10 @@ public class employees extends users implements EmpActions{
 				+ ", lastname=" + lastname + ", email=" + email + ", password=" + password + ", address=" + address
 				+ ", startDate=" + startDate + ", status=" + status + "]";
 	}
+	
+	
+	//START ACTUAL FUNCTIONS END AUTOGEN
+	
 
 	@Override
 	public employees login(String email, String password) {
@@ -181,20 +185,43 @@ public class employees extends users implements EmpActions{
 	@Override
 	public void viewRequests(int empId) {
 		// TODO Auto-generated method stub
-		
+		try {
+			;
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return;
+		}
+		System.out.println("Account Created");
+		return;
 	}
 
 	@Override
-	public void viewInformation() {
+	public void viewInformation(int empID) {
 		// TODO Auto-generated method stub
-		
+		try {
+			;
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return;
+		}
+		System.out.println("Account Created");
+		return;
 	}
 
 	@Override
-	public void updateInformation() {
+	public void updateInformation(String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) {
 		// TODO Auto-generated method stub
-		
+		try {		
+			;
+		} catch (Exception e) {
+			System.out.println("Oops.. (^_^)");
+			return;
+		}
+		System.out.println("Account Created");
+		return;
 	}
+	
+	//OPTIONAL
 
 	@Override
 	public void uploadImage() {

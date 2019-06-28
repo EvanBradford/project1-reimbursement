@@ -85,6 +85,34 @@ public class ReOracle implements ReDao {
 		}
 		return list;
 	}
+	public reimbursements getRe(int empID) throws Exception
+	{
+		Connection con = ConnectionUtil.getConnection();
+
+		if (con == null) {
+			log.error("Connection was null");
+			throw new Exception("Unable to connect to database");
+		}
+
+		List<reimbursements> list;
+		
+		try {			
+			String sql = "select * from REIMBURSEMENTS WHERE EMPLOYEE_ID = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, empID);
+			ResultSet rs = ps.executeQuery();
+			
+			list = new LinkedList<reimbursements>();
+			
+			while(rs.next()){
+				return new reimbursements(rs.getInt("REQUESTID"), rs.getDouble("AMOUNT"), rs.getString("PURPOSE"), rs.getString("SUBMITTEDDATE"), rs.getString("STATUS"), rs.getInt("EMPLOYEE_ID"));
+			}
+		}catch (SQLException e) {
+			log.error("Unable to execute sql query", e);
+			throw new Exception("Unable to connect to database");
+		}
+		return null;
+	}
 	public employees loginE(String userName, String password) throws Exception{
 		employees tmp = new employees();
 		// TODO login function

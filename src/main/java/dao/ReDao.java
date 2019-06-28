@@ -10,6 +10,7 @@ import application.users;
 public interface ReDao {
 	List<users> getAll() throws Exception;
 	List<reimbursements> getAllRe() throws Exception;
+	reimbursements getRe(int empID) throws Exception;
 	employees loginE(String email, String password) throws Exception;
 	admin loginA(String email, String password) throws Exception;
 	void insertEmp(String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) throws Exception;

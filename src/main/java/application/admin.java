@@ -1,5 +1,7 @@
 package application;
 
+import java.util.List;
+
 import dao.ReService;
 
 public class admin extends users implements AdminActions{
@@ -143,6 +145,10 @@ public class admin extends users implements AdminActions{
 				+ ", startDate=" + startDate + ", status=" + status + "]";
 	}
 
+	
+	//START ACTUAL FUNCTIONS END AUTOGEN
+	
+	
 	@Override
 	public admin login(String email, String password) {
 		// TODO Auto-generated method stub
@@ -163,13 +169,13 @@ public class admin extends users implements AdminActions{
 	}
 
 	@Override
-	public void approve() {
+	public void approve(int reID) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deny() {
+	public void deny(int reID) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -177,20 +183,43 @@ public class admin extends users implements AdminActions{
 	@Override
 	public void viewAllRequests() {
 		// TODO Auto-generated method stub
-		
+		List<reimbursements> list;
+		try {		
+			list = ReService.getAllRe();
+		} catch (Exception e) {
+			System.out.println("Opps.. (^_^)");
+			return;
+		}
+		System.out.println(list);
 	}
 
 	@Override
-	public void viewRequests(employees employee) {
+	public void viewRequests(int empID) {
 		// TODO Auto-generated method stub
-		
+		reimbursements tmp = new reimbursements();
+		try {		
+			tmp = ReService.getRe(empID);
+		} catch (Exception e) {
+			System.out.println("Opps.. (^_^)");
+			return;
+		}
+		System.out.println(tmp);
 	}
 
 	@Override
 	public void viewAllEmployees() {
 		// TODO Auto-generated method stub
-		
+		List<users> list;
+		try {		
+			list = ReService.getAllAccounts();
+		} catch (Exception e) {
+			System.out.println("Opps.. (^_^)");
+			return;
+		}
+		System.out.println(list);
 	}
+	
+	//OPTIONAL
 
 	@Override
 	public void viewImages() {

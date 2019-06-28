@@ -17,6 +17,12 @@ public class ReService {
 	{
 		return dao.getAllRe();
 	}
+	
+	public static reimbursements getRe(int empID) throws Exception
+	{
+		return dao.getRe(empID);
+	}
+	
 	public static employees loginE(String userName, String password) throws Exception{
 		return dao.loginE(userName, password);
 	}

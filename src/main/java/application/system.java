@@ -4,7 +4,7 @@ public class system {
 
 	public static void main(String[] args) {
 		System.out.println("WIP, this is for testing only");
-//		
+		
 //		admin ad = new admin();
 //		String EMPLOYEETYPE = "EMPLOYEE";
 //		String FIRSTNAME = "Frank";
@@ -16,7 +16,6 @@ public class system {
 //		String STATUS = "ACTIVE";
 //		ad.registerEmployees(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 //		
-//		
 //		employees emp = new employees();
 //		emp = emp.login(EMAIL, PASSWORD);
 //		
@@ -24,7 +23,7 @@ public class system {
 //		String PURPOSE = "Testing";
 //		String SUBMITTEDDATE = "6/27/2019";
 //		STATUS = "SUBMITTED";
-//		int EMPLOYEE_ID = 1;
+//		int EMPLOYEE_ID = 21;
 //		
 //		emp.submitRequest(AMOUNT, PURPOSE, SUBMITTEDDATE, STATUS, EMPLOYEE_ID);
 	}

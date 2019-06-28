@@ -9,10 +9,10 @@ public interface AdminActions {
 
 	//NORMAL FUNCTIONS
 
-	void approve();
-	void deny();
+	void approve(int reID);
+	void deny(int reID);
 	void viewAllRequests();
-	void viewRequests(employees employee);
+	void viewRequests(int empID);
 	void viewAllEmployees();
 
 	//Optional:

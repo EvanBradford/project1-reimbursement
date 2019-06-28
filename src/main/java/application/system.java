@@ -3,7 +3,7 @@ package application;
 public class system {
 
 	public static void main(String[] args) {
-//		System.out.println("WIP, this is for testing only");
+		System.out.println("WIP, this is for testing only");
 //		
 //		admin ad = new admin();
 //		String EMPLOYEETYPE = "EMPLOYEE";
@@ -13,7 +13,7 @@ public class system {
 //		String PASSWORD = "12345";
 //		String ADDRESS = "1234 Place Street";
 //		String STARTDATE = "2/24/2015";
-//		String STATUS = "CURRENTLY EMPLOYED";
+//		String STATUS = "ACTIVE";
 //		ad.registerEmployees(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 //		
 //		

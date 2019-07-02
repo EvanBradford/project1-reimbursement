@@ -10,13 +10,13 @@ public class system {
 //		ad.viewAllRequests();
 //		ad.viewRequests(21);
 //		String EMPLOYEETYPE = "EMPLOYEE";
-		String FIRSTNAME = "Hank";
-		String LASTNAME = "Hillard";
+//		String FIRSTNAME = "Hank";
+//		String LASTNAME = "Hillard";
 		String EMAIL = "propane@email.com";
 		String PASSWORD = "12345";
-		String ADDRESS = "1234 Strickland Propane";
-		String STARTDATE = "2/24/2005";
-		String STATUS = "ACTIVE";
+//		String ADDRESS = "1234 Strickland Propane";
+//		String STARTDATE = "2/24/2005";
+//		String STATUS = "ACTIVE";
 //		ad.registerEmployees(EMPLOYEETYPE, FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
 //		
 		employees emp = new employees();
@@ -25,11 +25,11 @@ public class system {
 		emp.viewInformation(emp.getEmployeeId());
 		emp.viewRequests(emp.getEmployeeId());
 		
-		emp.updateInformation(emp.getEmployeeId(), FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
-		
-		emp.viewInformation(emp.getEmployeeId());
-		emp.viewRequests(emp.getEmployeeId());
-		
+//		emp.updateInformation(emp.getEmployeeId(), FIRSTNAME, LASTNAME, EMAIL, PASSWORD, ADDRESS, STARTDATE, STATUS);
+//		
+//		emp.viewInformation(emp.getEmployeeId());
+//		emp.viewRequests(emp.getEmployeeId());
+//		
 //		System.out.println(emp);
 //		double AMOUNT = 9999.99;
 //		String PURPOSE = "Y2K";

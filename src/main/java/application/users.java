@@ -15,6 +15,7 @@ public abstract class users implements Serializable{
 	protected String status;
 	
 	public users() {
+	
 	}
 	
 	public users(int employeeId, String employeeType, String firstname, String lastname, String email, String password,

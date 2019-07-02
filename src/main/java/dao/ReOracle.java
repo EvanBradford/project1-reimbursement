@@ -140,7 +140,6 @@ public class ReOracle implements ReDao {
 	}
 	public employees loginE(String userName, String password) throws Exception{
 		employees tmp = new employees();
-		// TODO login function
 		Connection con = ConnectionUtil.getConnection();
 
 		if (con == null) {
@@ -171,7 +170,6 @@ public class ReOracle implements ReDao {
 	
 	public admin loginA(String userName, String password) throws Exception{
 		admin tmp = new admin();
-		// TODO login function
 		Connection con = ConnectionUtil.getConnection();
 
 		if (con == null) {
@@ -200,7 +198,6 @@ public class ReOracle implements ReDao {
 		return tmp;
 	}
 	public void insertEmp(String EMPLOYEETYPE, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) throws Exception {
-		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();
 
 		if (con == null) {
@@ -230,7 +227,6 @@ public class ReOracle implements ReDao {
 		}
 	}
 	public void updateEmp(int empID, String FIRSTNAME, String LASTNAME, String EMAIL, String PASSWORD, String ADDRESS, String STARTDATE, String STATUS) throws Exception {
-		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();
 
 		if (con == null) {
@@ -256,7 +252,6 @@ public class ReOracle implements ReDao {
 		}
 	}
 	public void insertRe(double AMOUNT, String PURPOSE, String SUBMITTEDDATE, String STATUS, int EMPLOYEE_ID) throws Exception {
-		// TODO Insert
 		Connection con = ConnectionUtil.getConnection();
 
 		if (con == null) {
